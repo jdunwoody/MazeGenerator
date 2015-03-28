@@ -9,5 +9,16 @@
 import UIKit
 
 class Maze: NSObject {
-   
+
+    let algorithm: RecursiveBacktracker
+    let dimensions: CGRect
+
+    override init() {
+        self.algorithm = RecursiveBacktracker()
+        self.dimensions = CGRect(x: 0, y: 0, width: 100, height: 100)
+    }
+
+    func generateMaze() {
+        self.algorithm.generate(self.dimensions)
+    }
 }
